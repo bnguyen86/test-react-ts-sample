@@ -1,20 +1,21 @@
 import { useState } from "react";
 
-import MenuItem from "./MenuItem";
+import MenuParentItem from "./MenuParentItem";
 
-import type { MenuItem as MenuItemType } from "./MenuItem";
+import type { MenuItem } from "./types";
+
 
 type MenuBarProps = {
-    menuItems: MenuItemType[];
+    menuItems: MenuItem[];
     dispatcher: React.Dispatch<any>;
 }
 export default function MenuBar({ menuItems, dispatcher }: MenuBarProps) {
     return (
         <>
             {
-                menuItems.map((item: MenuItemType, index) => {
+                menuItems.map((item: MenuItem, index) => {
                     return (
-                        <MenuItem item={item} key={index} dispatcher={dispatcher} />
+                        <MenuParentItem item={item} key={index} dispatcher={dispatcher} />
                     )
                 })
             }
