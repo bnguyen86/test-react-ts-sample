@@ -9,11 +9,11 @@ const columns = [
 ];
 export default function GroupListData() {
     return (
-        <Paper sx={{ height: 400, width: '100%' }}>
+        <Paper sx={{ height: 'calc(100vh - 2rem)' }}>
           <DataGrid
             rows={repGroups}
             columns={columns}
-            sx={{ border: 0 }}
+            sx={{ border: 0, flex: '1' }}
             getRowId={(row) => row.repGroupId}
           />
         </Paper>

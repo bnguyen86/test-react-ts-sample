@@ -1,4 +1,3 @@
-//TODO this shoul dbe a base window, and then use it in a "Maintenance" window
 import { useReducer } from "react";
 
 import Card from "@mui/material/Card";
@@ -27,13 +26,13 @@ const tabs: Tab[] = [
     {
         label: 'Referrals',
         contents: <Item>Referrals</Item>
-    },{
+    }, {
         label: 'Overrides',
         contents: <Item>Overrides</Item>
     },
     {
         label: 'Rep Groups',
-        contents: <MaintenanceRepGroupsPanel/>
+        contents: <MaintenanceRepGroupsPanel />
     },
     {
         label: 'Rep Offices',
@@ -53,16 +52,14 @@ const tabs: Tab[] = [
     }
 ];
 
-export default function Window() {
+export default function MaintenanceWindow() {
     const [windowState, dispatchWindowState] = useReducer(windowActionReducer, { minimized: false, maximized: false });
     const [menuState, dispatchMenuState] = useReducer(menuActionReducer, {});
 
     return (
-        <Container maxWidth="lg" sx={{ width: '100vw', height: '100vh' }}>
-            <Card sx={{height: '90vh'}}>
-                <WindowHeader title="Maintenance"/>
-                <TabPanel tabs={tabs}/>
-            </Card>
-        </Container>
+        <Card sx={{ display: 'flex', flexDirection: 'column'}}>
+            <WindowHeader title="Maintenance" />
+            <TabPanel tabs={tabs} />
+        </Card>
     )
 }

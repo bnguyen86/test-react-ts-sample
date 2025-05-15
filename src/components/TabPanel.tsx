@@ -22,18 +22,18 @@ export default function TabPanel({ tabs }: TabPanelProps) {
   })
 
   const tabContents = tabs.map((tab, index) => {
-    return <div key={index} hidden={value !== index}>
+    return <div key={index} hidden={value !== index} style={{ flex: 1 }}>
       {tab.contents}
     </div>
   });
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ margin: '1rem' }}>
+    <Box sx={{ width: '100%', flex: '1', overflow: 'hidden'}}>
+      <Box sx={{ margin: '1rem', display: 'flex', flexDirection: 'column', height: '100%'}}> 
         <Tabs value={value} onChange={handleChange} aria-label="Window Tabs" sx={{ borderBottom: 1, borderColor: 'divider' }}>
           {tabsNodes}
         </Tabs>
-        <Box sx={{flex: 1}}>
+        <Box sx={{flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column'}}>
           {tabContents}
         </Box>
       </Box>

@@ -3,7 +3,7 @@ import GroupListFilters from "./GroupListFilters";
 
 export default function GroupList() {
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
             <GroupListData/>
             <GroupListFilters/>
         </div>
