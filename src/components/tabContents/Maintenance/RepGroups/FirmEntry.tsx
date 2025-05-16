@@ -20,6 +20,7 @@ export default function FirmEntry() {
             <FormGroup sx={{ padding: '0 .6rem', display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
                 <FormControlLabel control={<TextField label="" type="file" variant="outlined" />} label="Drag and Drop Email Items" />
             </FormGroup>
+            {/* TODO: Does this need it's own component? */}
             <Box sx={{ border: 1, borderColor: 'divider', display: 'flex', flexDirection: 'column', padding: '1rem', gap: '.5rem' }}>
                 <h3 style={{ margin: '.5rem' }}>Quarterly Payout</h3>
                 <TextField label="W9 Name" variant="outlined" />
