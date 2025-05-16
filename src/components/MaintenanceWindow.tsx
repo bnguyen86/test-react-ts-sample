@@ -1,7 +1,6 @@
 import { useReducer } from "react";
 
 import Card from "@mui/material/Card";
-import Container from "@mui/material/Container";
 import Item from "@mui/material/Grid";
 
 import WindowHeader from "./WindowHeader";

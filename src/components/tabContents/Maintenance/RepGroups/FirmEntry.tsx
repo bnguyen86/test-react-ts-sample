@@ -15,6 +15,7 @@ export default function FirmEntry() {
             <div style={{ display: 'flex', justifyContent: 'end', gap: '1rem' }}>
                 <Button variant='outlined' onClick={resetForm}>Clear Form</Button>
             </div>
+
             <TextField label="Firm CRD" variant="outlined" />
             <FormGroup sx={{ padding: '0 .6rem', display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
                 <FormControlLabel control={<TextField label="" type="file" variant="outlined" />} label="Drag and Drop Email Items" />

@@ -4,8 +4,8 @@ import Paper from '@mui/material/Paper';
 import {repGroups} from '../../../../data/repGroups';
 
 const columns = [
-    { field: 'repGroupId', headerName: 'ID', width: 90 },
-    { field: 'repGroupName', headerName: 'Group Name', width: 150 },
+    { field: 'repGroupId', headerName: 'ID', flex: 1 },
+    { field: 'repGroupName', headerName: 'Group Name', flex: 2 },
 ];
 export default function GroupListData() {
     return (

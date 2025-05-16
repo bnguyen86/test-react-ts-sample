@@ -3,7 +3,8 @@ export default class Group  {
     repGroupName = '';
     reps = '';
     eomTotal = '';
-    address = '';
+    addressLine1 = '';
+    addressLine2 = '';
     city = '';
     state = '';
     zip = '';

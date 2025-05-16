@@ -18,12 +18,13 @@ export default function GroupEntry() {
             </div>
             <TextField name="repGroupId" label="Rep Group Id" variant="outlined" value={formEntry?.repGroupId} />
             <TextField name="repGroupName" label="Rep Group Name" variant="outlined" value={formEntry?.repGroupName}/>
-            <TextField name="" label="Reps" variant="outlined" multiline rows={4} />
-            <TextField name="" label="EOM Total" variant="outlined" />
-            <TextField name="" label="Address" variant="outlined" />
-            <TextField name="" label="" variant="outlined" />
+            <TextField name="reps" label="Reps" variant="outlined" multiline rows={4} value={formEntry?.reps}/>
+            <TextField name="eomTotal" label="EOM Total" variant="outlined" value={formEntry?.eomTotal}/>
+            <TextField name="addressLine1" label="Address" variant="outlined" value={formEntry?.addressLine1}/>
+            <TextField name="addressLine2" label="" variant="outlined" value={formEntry?.addressLine2}/>
+
             <div style={{ display: 'flex', justifyContent: 'end', gap: '1rem' }}>
-                <TextField label="City" variant="outlined" sx={{ flex: '1' }}/>
+                <TextField name="city" label="City" variant="outlined" sx={{ flex: '1' }}/>
                 <TextField name="state" label="State/Province" select variant="outlined" sx={{ flex: '1' }} value={formEntry?.state}>
                     <MenuItem value="Alabama">
                         Alabama
@@ -42,6 +43,7 @@ export default function GroupEntry() {
                     </MenuItem>
                 </TextField>
             </div>
+
             <div style={{ display: 'flex', justifyContent: 'end', gap: '1rem' }}>
                 <TextField name="zip" label="Zip/Postal Code" variant="outlined" sx={{ flex: '1' }} />
                 <TextField name="country" label="Country" select variant="outlined" sx={{ flex: '2' }} value={formEntry?.country}>
@@ -53,9 +55,10 @@ export default function GroupEntry() {
                     </MenuItem>
                 </TextField>
             </div>
-            <TextField label="Phone" type="tel" variant="outlined" />
-            <TextField label="Fax" type="tel" variant="outlined" />
-            <TextField label="Contact" variant="outlined" />
+
+            <TextField name="phone" label="Phone" type="tel" variant="outlined" />
+            <TextField name="fax" label="Fax" type="tel" variant="outlined" />
+            <TextField name="contact" label="Contact" variant="outlined" />
             <FormGroup sx={{ display: 'flex', flexDirection: 'column' }}>
                 <FormControlLabel control={<Checkbox />} label="Active" />
                 <FormControlLabel control={<Checkbox />} label="Broker Dealer" />
@@ -66,6 +69,7 @@ export default function GroupEntry() {
                 <FormControlLabel control={<Checkbox />} label="Terminated" />
             </FormGroup>
             <TextField label="Notes" variant="outlined" multiline rows={4} />
+
             <div style={{ display: 'flex', justifyContent: 'end', gap: '.5rem' }}>
                 <Button variant='outlined'>Add</Button>
             </div>

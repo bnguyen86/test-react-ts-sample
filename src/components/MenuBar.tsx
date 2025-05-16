@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import MenuParentItem from "./MenuParentItem";
 
 import type { MenuItem } from "./types";
