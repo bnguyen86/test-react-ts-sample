@@ -9,7 +9,7 @@ const columns = [
 ];
 export default function GroupListData() {
     return (
-        <Paper sx={{ height: 'calc(100vh - 2rem)' }}>
+        <Paper sx={{ height: 'calc(70vh - 2rem)' }}>
           <DataGrid
             rows={repGroups}
             columns={columns}
