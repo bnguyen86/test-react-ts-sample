@@ -6,31 +6,10 @@ import TextField from "@mui/material/TextField";
 
 import useFormEntry from "../../../../hooks/useFormEntry";
 import MenuItem from "@mui/material/MenuItem";
-
-
-class GroupEntryForm  {
-    repGroupId = '';
-    repGroupName = '';
-    reps = '';
-    eomTotal = '';
-    address = '';
-    city = '';
-    state = '';
-    zip = '';
-    country = '';
-    phone = '';
-    fax = '';
-    contact = '';
-    active = false;
-    brokerDealer = false;
-    allowOutsideRIA = false;
-    friendOfCarlotta = false;
-    terminated = false;
-    notes = '';
-}
+import Group from '../../../../models/Group';
 export default function GroupEntry() {
 
-    const { formEntry, handleChange, isDirty, resetForm } = useFormEntry<GroupEntryForm>(new GroupEntryForm());
+    const { formEntry, handleChange, isDirty, resetForm } = useFormEntry<Group>(new Group());
 
     return (
         <form style={{ display: 'flex', flexDirection: 'column', padding: '1rem', gap: '.5rem' }} onChange={handleChange}>
@@ -45,7 +24,7 @@ export default function GroupEntry() {
             <TextField name="" label="" variant="outlined" />
             <div style={{ display: 'flex', justifyContent: 'end', gap: '1rem' }}>
                 <TextField label="City" variant="outlined" sx={{ flex: '1' }}/>
-                <TextField label="State/Province" select variant="outlined" sx={{ flex: '1' }}>
+                <TextField name="state" label="State/Province" select variant="outlined" sx={{ flex: '1' }} value={formEntry?.state}>
                     <MenuItem value="Alabama">
                         Alabama
                     </MenuItem>
@@ -64,8 +43,8 @@ export default function GroupEntry() {
                 </TextField>
             </div>
             <div style={{ display: 'flex', justifyContent: 'end', gap: '1rem' }}>
-                <TextField label="Zip/Postal Code" variant="outlined" sx={{ flex: '1' }} />
-                <TextField label="Country" select variant="outlined" sx={{ flex: '2' }}>
+                <TextField name="zip" label="Zip/Postal Code" variant="outlined" sx={{ flex: '1' }} />
+                <TextField name="country" label="Country" select variant="outlined" sx={{ flex: '2' }} value={formEntry?.country}>
                     <MenuItem value="Canada">
                         Canada
                     </MenuItem>
